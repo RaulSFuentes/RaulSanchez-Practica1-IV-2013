@@ -1,0 +1,74 @@
+#central{
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	min-height:50px;
+	}
+#cabecera{
+	height:90px;
+	text-align:center;
+	}
+#cuerpo{
+	min-height: 370px;
+}
+#menu{
+	width: 24%;
+	padding:40px;
+	background: url(./imagenes/menu.gif);
+	float: left;
+}
+#contenido{
+	width: 65%;
+	float: right;
+	min-height: 370px;
+	margin: 10px;
+}
+#pie{
+	height: 50px; 
+	text-align:center;
+}
+#menuclientes{
+	display:none;
+}
+#ocultarcliente{
+	display:none;
+}
+#menuproductos{
+	display:none;
+}
+#ocultarproductos{
+	display:none;
+}
+#menunoticias{
+	display:none;
+}
+#ocultarnoticias{
+	display:none;
+}
+#menuadministrador{
+	display:none;
+}
+#ocultaradministrador{
+	display:none;
+}
+#menucuenta{
+	display:none;
+}
+#ocultarcuenta{
+	display:none;
+}
+#menucompra{
+	display:none;
+}
+#ocultarcompra{
+	display:none;
+}
+#descrip{
+	width:400px;
+	height:100px;
+	border: 2px solid #990000;
+	}
+#tablacompra td{
+	text-align: center;
+}	

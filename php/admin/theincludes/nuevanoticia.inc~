@@ -1,0 +1,59 @@
+<?php		
+			include_once("./theincludes/funciones.inc");
+			$db = new mysqli('localhost', 'aporuvas_admin', 'admin','aporuvas_compras'); 
+			if (isset ($_POST['Insertar'])){
+				$fallo = false;
+				$titulo = $_POST['titulo'];
+				$contenido= $_POST['contenido'];
+				$fe = $_POST['fecha'];
+				$fecha = $fe;
+				if (($titulo == "" || $contenido == "" || $fecha == "") && $fallo == false){
+					$fallo = "Todos los campos son obligatorios";
+				}
+				if($fallo == false){
+				
+					$fecha = null;
+					$fecha = cambiafamysql($fe);
+					
+					$consulta = "INSERT INTO Noticia (titulo,contenido,fecha) VALUES('".$titulo."', '".$contenido."', '".$fecha."')";
+					$cursor = $db->query($consulta);
+					echo "<h3>Añadida noticia: $titulo.</h3>";
+					echo "<br/>";
+					$db->CLOSE();
+				}else{
+					echo "Revise:  $fallo"; 
+					echo "<span><h3>Nueva Noticia</h3></span>";
+				echo '<form action="index.php?op=7" method = "POST">
+				Titulo: <input type="text" name = "titulo" id ="titulo" value ="'.$titulo.'">
+				<br/>
+				<br/>
+				Contenido: <br/>
+				<textarea name="contenido" id="descrip">'.$contenido.'</textarea>
+				<br/>
+				<br/>
+				<br/>
+				Fecha: <input type="text" name = "fecha" id ="fecha" value="'.$fecha.'">
+				<br/>
+				<br/>
+				<input type ="submit" value="Insertar" name = "Insertar">
+				</form>';
+				}
+			}else{
+				echo "<span><h3>Nueva Noticia</h3></span>";
+				$today = date("d/m/Y");                       
+				echo '<form action="index.php?op=7" method = "POST">
+				Titulo: <input type="text" name = "titulo" id ="titulo">
+				<br/>
+				<br/>
+				Contenido: <br/>
+				<textarea name="contenido" id="descrip"></textarea> 
+				<br/>
+				<br/>
+				<br/>
+				Fecha: <input type="text" name = "fecha" id ="fecha" value="' . $today . '">
+				<br/>
+				<br/>
+				<input type ="submit" value="Insertar" name = "Insertar">
+				</form>';
+			}		
+?>
