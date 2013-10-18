@@ -1,3 +1,23 @@
+<?php
+/*
+http://myapp-raulsanchez.rhcloud.com/
+
+Copyright (C) 2013  RaÃºl SÃ¡nchez Fuentes
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+?>
 <html>
 <head>
 <link href="stylo.css" rel="stylesheet" type="text/css" />
@@ -33,13 +53,13 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 					$fallo = "Todos los campos son obligatorios";
 				}
 				if (!validarcp($cp) && $fallo == false){
-					$fallo = "Introduzca un Código Postal correcto";
+					$fallo = "Introduzca un Cï¿½digo Postal correcto";
 				}
 				if (comprobar_dni($dni) == 0 && $fallo == false){
 					$fallo = "Introduzca un DNI correcto";
 				}
 				if (!validarTelefono($tel) && $fallo == false){
-					$fallo = "Introduzca un número de teléfono correcto";
+					$fallo = "Introduzca un nï¿½mero de telï¿½fono correcto";
 				}
 				if (comprobar_email($email) == 0 && $fallo == false){
 					$fallo = "Introduzca un email correcto";
@@ -57,15 +77,15 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 					$fecha = null;
 					$fecha = cambiafamysql($fe);
 				
-					$consulta = "INSERT INTO Cliente (nombre,apellidos,fecha_nacimiento, direccion, localidad, provincia, pais, cp, dni, telefono, email, contraseña) VALUES('".$nombre."', '".$ape."', '".$fecha."', '".$dire."', '".$loca."', '".$prov."', '".$pais."', '".$cp."', '".$dni."', '".$tel."', '".$email."', '".$contra."')";
+					$consulta = "INSERT INTO Cliente (nombre,apellidos,fecha_nacimiento, direccion, localidad, provincia, pais, cp, dni, telefono, email, contraseï¿½a) VALUES('".$nombre."', '".$ape."', '".$fecha."', '".$dire."', '".$loca."', '".$prov."', '".$pais."', '".$cp."', '".$dni."', '".$tel."', '".$email."', '".$contra."')";
 					$cursor = $db->query($consulta);
 					$cuerpo .= "Un cordial saludo $nombre \n\n";
 					$cuerpo .= 'Lo primero es darle la bienvenida como cliente de "Pa Chuparse los Dedos", y agradecerle su confianza en nosotros.' . "\n\n";
-					$cuerpo .= "Por medidas de seguridad, y para asegurar que los datos proporcionados son correctos, su contraseña elegida será sustituida por su número de DNI. Por ello sus datos de acceso son los siguientes:\n\n"; 
+					$cuerpo .= "Por medidas de seguridad, y para asegurar que los datos proporcionados son correctos, su contraseï¿½a elegida serï¿½ sustituida por su nï¿½mero de DNI. Por ello sus datos de acceso son los siguientes:\n\n"; 
 					$cuerpo .= "Datos De Cliente:\n"; 
 					$cuerpo .= "Usuario: " . $nombre . "\n\n"; 
-					$cuerpo .= "Contraseña: " . $dni . "\n\n"; 
-					$cuerpo .= "Con estos datos ya podra acceder a la web identificandose y podrá realizar sus compras.\n\n"; 
+					$cuerpo .= "Contraseï¿½a: " . $dni . "\n\n"; 
+					$cuerpo .= "Con estos datos ya podra acceder a la web identificandose y podrï¿½ realizar sus compras.\n\n"; 
 					$cuerpo .= "Un Saludo, el Administrador.\n\n"; 
 
 					mail($email,"Pa chuparse los dedos",$cuerpo); 
@@ -89,7 +109,7 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 				Fecha de Nacimiento: <input type="text" name = "fecha" id ="fecha" value="'.$fecha.'">
 				<br/>
 				<br/>
-				Dirección: <input type="text" name = "dire" id ="dire" value="'.$dire.'">
+				Direcciï¿½n: <input type="text" name = "dire" id ="dire" value="'.$dire.'">
 				<br/>
 				<br/>
 				Localidad: <input type="text" name = "loca" id ="loca" value="'.$loca.'">
@@ -98,22 +118,22 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 				Provincia: <input type="text" name = "prov" id ="prov" value="'.$prov.'">
 				<br/>
 				<br/>
-				País: <input type="text" name = "pais" id ="pais" value="'.$pais.'">
+				Paï¿½s: <input type="text" name = "pais" id ="pais" value="'.$pais.'">
 				<br/>
 				<br/>
-				Código Postal: <input type="text" name = "cp" id ="cp" value="'.$cp.'">
+				Cï¿½digo Postal: <input type="text" name = "cp" id ="cp" value="'.$cp.'">
 				<br/>
 				<br/>
 				DNI: <input type="text" name = "dni" id ="dni" value="'.$dni.'">
 				<br/>
 				<br/>
-				Teléfono: <input type="text" name = "tel" id ="tel" value="'.$tel.'">
+				Telï¿½fono: <input type="text" name = "tel" id ="tel" value="'.$tel.'">
 				<br/>
 				<br/>
 				Email: <input type="text" name = "email" id ="email" value="'.$email.'">
 				<br/>
 				<br/>
-				Contraseña: <input type="text" name = "contracli" id ="contracli" value="'.$contracli.'">
+				Contraseï¿½a: <input type="text" name = "contracli" id ="contracli" value="'.$contracli.'">
 				<br/>
 				<br/>
 				<input type ="submit" value="Insertar" name = "Insertar" id = "Insertar">
@@ -131,7 +151,7 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 				Fecha de Nacimiento: <input type="text" name = "fecha" id ="fecha" value="01/01/0001">
 				<br/>
 				<br/>
-				Dirección: <input type="text" name = "dire" id ="dire">
+				Direcciï¿½n: <input type="text" name = "dire" id ="dire">
 				<br/>
 				<br/>
 				Localidad: <input type="text" name = "loca" id ="loca">
@@ -140,22 +160,22 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 				Provincia: <input type="text" name = "prov" id ="prov">
 				<br/>
 				<br/>
-				País: <input type="text" name = "pais" id ="pais">
+				Paï¿½s: <input type="text" name = "pais" id ="pais">
 				<br/>
 				<br/>
-				Código Postal: <input type="text" name = "cp" id ="cp">
+				Cï¿½digo Postal: <input type="text" name = "cp" id ="cp">
 				<br/>
 				<br/>
 				DNI: <input type="text" name = "dni" id ="dni">
 				<br/>
 				<br/>
-				Teléfono: <input type="text" name = "tel" id ="tel">
+				Telï¿½fono: <input type="text" name = "tel" id ="tel">
 				<br/>
 				<br/>
 				Email: <input type="text" name = "email" id ="email">
 				<br/>
 				<br/>
-				Contraseña: <input type="text" name = "contracli" id ="contracli">
+				Contraseï¿½a: <input type="text" name = "contracli" id ="contracli">
 				<br/>
 				<br/>
 				<input type ="submit" value="Insertar" name = "Insertar">
