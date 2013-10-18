@@ -3,6 +3,28 @@ session_start();
 session_register('usuario'); 
 session_register('contrase'); 
 ?>
+
+<?php
+/*
+http://myapp-raulsanchez.rhcloud.com/
+
+Copyright (C) 2013  RaÃºl SÃ¡nchez Fuentes
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -191,7 +213,7 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 					<b><p>Datos incorrectos</p></b>
 					<form action="index.php" method = "POST">
 						  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario: <input type = "text" id = "usu" name = "usu"><br/>
-						Contraseña: <input type = "password" id = "contra" name = "contra"><br/>
+						Contraseï¿½a: <input type = "password" id = "contra" name = "contra"><br/>
 						<input type = "submit" id = "Acceder" name = "Acceder" value="Acceder" text="Acceder"><a href="registro.php" id="enlaceregistro" target="blank">Registrarse</a>
 					</form>	
 				<?php
@@ -202,7 +224,7 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 			?>
 			<form action="index.php" method = "POST">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario: <input type = "text" id = "usu" name = "usu"><br/>
-				Contraseña: <input type = "password" id = "contra" name = "contra"><br/>
+				Contraseï¿½a: <input type = "password" id = "contra" name = "contra"><br/>
 			<input type = "submit" id = "Acceder" name = "Acceder" value="Acceder" text="Acceder"><a href="registro.php" id="enlaceregistro" target="blank">Registrarse</a>
 			</form>	
 			<?php
@@ -308,8 +330,8 @@ $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
 </div>
 <div id="centro">
 	<div id="conteinicio">
-		<h3><p id="tituloproducto">INFORMACIÓN</p></h3>
-		<p>	Práctica 1, Infraestructura Virtual 2013
+		<h3><p id="tituloproducto">INFORMACIï¿½N</p></h3>
+		<p>	Prï¿½ctica 1, Infraestructura Virtual 2013
 		</p>
 	</div>
 	<div id="contenoticias">
