@@ -28,6 +28,27 @@ if ($item){
 $_SESSION['itemsEnCesta']=$itemsEnCesta; 
 
 ?>
+
+<?php
+/*
+http://myapp-raulsanchez.rhcloud.com/
+
+Copyright (C) 2013  RaÃºl SÃ¡nchez Fuentes
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+?>
 <html>
 <head>
 <title>Carrito en "Pa chuparse los dedos"</title>
@@ -76,9 +97,9 @@ if ($_GET['confirmar'] == 'no'){
 					$pr = $pre * $v;
 					$total = $total + $pr;
 					if ($j == 1){
-						$cadena = $cadena.$nombrep." --> ".$v." unidades " . " Precio --> " . $pre . "€/"; 
+						$cadena = $cadena.$nombrep." --> ".$v." unidades " . " Precio --> " . $pre . "ï¿½/"; 
 					}else{
-						$cadena = $cadena."/".$nombrep." --> ".$v." unidades " . " Precio --> " . $pre . "€/"; 
+						$cadena = $cadena."/".$nombrep." --> ".$v." unidades " . " Precio --> " . $pre . "ï¿½/"; 
 					}
 				}
 			}
@@ -93,7 +114,7 @@ if ($_GET['confirmar'] == 'no'){
 	  }
 	 echo "</ul>";
 	echo "<br/>"; 
-	echo "Precio total de la compra --> $total €";
+	echo "Precio total de la compra --> $total ï¿½";
 	echo "<br/>"; 
 	echo '<a href="carrito.php?confirmar=si">Confirmar</a> ';
 	echo ' <a href="carrito.php">Cancelar</a>';
@@ -122,9 +143,9 @@ if ($_GET['confirmar'] == 'no'){
 					$pr = $pre * $v;
 					$total = $total + $pr;
 					if ($j == 1){
-						$cadena = $cadena.$nombrep." --> ".$v." unidades " . " Precio unidad --> " . $pre . "€/"; 
+						$cadena = $cadena.$nombrep." --> ".$v." unidades " . " Precio unidad --> " . $pre . "ï¿½/"; 
 					}else{
-						$cadena = $cadena."/".$nombrep." --> ".$v." unidades " . " Precio unidad --> " . $pre . "€/"; 
+						$cadena = $cadena."/".$nombrep." --> ".$v." unidades " . " Precio unidad --> " . $pre . "ï¿½/"; 
 					}
 				}
 			}
@@ -182,11 +203,11 @@ if ($_GET['confirmar'] == 'no'){
 	for($i=0;$cadena2[$i];$i++) {
 			$cuerpo .= "$cadena2[$i]\n"; 
 	  }
-	$cuerpo .= "Precio Total de la Compra: " . $total . " € \n\n"; 
-    $cuerpo .= "Número de cuenta: " . $cuent . "\n\n"; 
-	$cuerpo .= "Identificación: " . $cli . "-". $comp ."\n\n"; 
-	$cuerpo .= 'Estimado Cliente, ' . "\n\n" .' Estos son los datos de su compra en "Pa Chuparse los Dedos", asi como los datos bancarios en los que debe de hacer el ingreso del precio de la compra, escriba la identificación que se le indica a la hora de hacer el ingreso y en el plazo más breve posible se le realizara el envio.' ."\n\n"; 
-	$cuerpo .= "Para cualquier duda no responda a este correo, mande un correo a la dirección de contacto que aparece en la web.\n\n"; 
+	$cuerpo .= "Precio Total de la Compra: " . $total . " ï¿½ \n\n"; 
+    $cuerpo .= "Nï¿½mero de cuenta: " . $cuent . "\n\n"; 
+	$cuerpo .= "Identificaciï¿½n: " . $cli . "-". $comp ."\n\n"; 
+	$cuerpo .= 'Estimado Cliente, ' . "\n\n" .' Estos son los datos de su compra en "Pa Chuparse los Dedos", asi como los datos bancarios en los que debe de hacer el ingreso del precio de la compra, escriba la identificaciï¿½n que se le indica a la hora de hacer el ingreso y en el plazo mï¿½s breve posible se le realizara el envio.' ."\n\n"; 
+	$cuerpo .= "Para cualquier duda no responda a este correo, mande un correo a la direcciï¿½n de contacto que aparece en la web.\n\n"; 
 	$cuerpo .= "Gracias por su compra.\n\n"; 
 
     mail($emaile,"Pa chuparse los dedos",$cuerpo); 
@@ -221,7 +242,7 @@ if ($_GET['confirmar'] == 'no'){
 			if ($v > 0){
 			echo '<form action="carrito.php" method = "POST" target="blank">';
 			echo "<li>";
-			echo 'Artículo: '.$nombrep.' ud: '.$v.' '; 
+			echo 'Artï¿½culo: '.$nombrep.' ud: '.$v.' '; 
 			echo '<select name="cantidad">';
 				for ($j= 1; $j<$v+1;$j++){
 					if ($j ==1){
@@ -237,12 +258,12 @@ if ($_GET['confirmar'] == 'no'){
 			echo "&nbsp;";
 			$pr = $pre * $v;
 			$total = $total + $pr;
-			echo "Precio --> $pre €";
+			echo "Precio --> $pre ï¿½";
 			echo "</li>";
 			echo "</form>";
 			}
 	   }
-	    echo "Precio total de la compra --> $total €";
+	    echo "Precio total de la compra --> $total ï¿½";
 		echo "<br/>";
 		echo '<a href="carrito.php?confirmar=no">Comprar</a>';
 	}
